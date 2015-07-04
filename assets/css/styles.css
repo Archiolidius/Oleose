@@ -538,6 +538,12 @@ section::after {
   font-weight: 400;
   font-weight: 300;
 }
+.tp-caption.large_white_light_min {
+  color: #ffffff;
+  font-size: 45px;
+  font-weight: 400;
+  font-weight: 300;
+}
 .btn {
   -webkit-border-radius: 3em;
   -moz-border-radius: 3em;

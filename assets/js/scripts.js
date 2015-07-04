@@ -9,6 +9,41 @@ var appMaster = {
         if ($(imageSources).load()) {
             $('.pre-loader').fadeOut('slow');
         }
+
+        $('.contact-us-send').on('click', function (e) {
+            e.preventDefault();
+            var data = {};
+            data.name = $('.contact-us-form .name').val();
+            data.email = $('.contact-us-form .email').val();
+            data.message = $('.contact-us-form .message').val();
+            $.ajax({
+                url: 'http://45.55.72.219:32769/contactUsLanding',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'GET',
+                crossDomain: true,
+                data: data,
+                success: function () {
+                    alert('Sent. Thanks!');
+                }
+            });
+        });
+        $('.subscribe-send').on('click', function (e) {
+            e.preventDefault();
+            var data = {};
+            data.email = $('.subscribe-form .email').val();
+            $.ajax({
+                url: 'http://45.55.72.219:32769/subscribeLanding',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'GET',
+                crossDomain: true,
+                data: data,
+                success: function () {
+                    alert('Sent. Thanks!');
+                }
+            });
+        });
     },
 
     smoothScroll: function () {
@@ -89,6 +124,12 @@ var appMaster = {
 
         $('.js-filter-three').on('click', function () {
             $('.filtering').slickFilter('.three');
+            $('.filter a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.js-filter-four').on('click', function () {
+            $('.filtering').slickFilter('.four');
             $('.filter a').removeClass('active');
             $(this).addClass('active');
         });
