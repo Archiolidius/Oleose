@@ -604,7 +604,7 @@ form .form-control {
   height: 40px;
   line-height: 40px;
   padding: 10px 20px;
-  color: #cfcfcf;
+  color: #777777;
   border: 2px solid #cccccc;
   font-weight: 300;
 }
@@ -1071,7 +1071,7 @@ footer .rights a {
 }
 form .form-control:focus {
   border-color: #66cdcc;
-  color: #999999;
+  color: #515151;
 }
 @media screen and (max-width: 640px) {
   header .navbar-default .navbar-toggle:hover,
