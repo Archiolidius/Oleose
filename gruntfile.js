@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 				options: {
 					paths: ['css'],
 					compress: false,
-					ieCompat: true,
+					ieCompat: true
 				},
 				files: {
 					'assets/css/styles.css': 'assets/less/colors.less'
@@ -28,10 +28,10 @@ module.exports = function(grunt) {
 				options: {
 					paths: ['css'],
 					compress: true,
-					ieCompat: true,
+					ieCompat: true
 				},
 				files: {
-					'assets/css/styles.min.css': 'assets/less/styles.less'
+					'assets/css/styles.min.css': 'assets/less/colors.less'
 				}
 			}
 		},
@@ -52,11 +52,7 @@ module.exports = function(grunt) {
 	    	options: { livereload: true },
 	      	less: {
 	        	files: ['assets/**/*.less'],
-	        	tasks: ['newer:less:dev'],
-	      	},
-	      	scripts: {
-	      		files: ['**/*.js', '*.html'],
-	      		tasks: ['jslint']
+	        	tasks: ['less:dev']
 	      	}
 	    },
 	    bumpup: {
@@ -74,7 +70,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.task.registerTask('default', 'jslint');
-	grunt.task.registerTask('default', ['connect','watch']);
+	//grunt.task.registerTask('default', 'jslint');
+	grunt.task.registerTask('default', ['less:dev']);
+	grunt.task.registerTask('prod', ['less:prod']);
 
 };
